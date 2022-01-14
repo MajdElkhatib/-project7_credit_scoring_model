@@ -1,1 +1,2 @@
+sudo update-alternatives  --set python /usr/bin/python3.7
 streamlit= 1.4.0
