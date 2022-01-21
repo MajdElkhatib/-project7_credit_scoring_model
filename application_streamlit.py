@@ -202,12 +202,12 @@ def main() :
     st.write("**Default probability : **{:.0f} %".format(round(float(prediction)*100, 2)))
 
     #Compute decision according to the best threshold
-    #if prediction <= xx :
-    #    decision = "<font color='green'>**LOAN GRANTED**</font>" 
-    #else:
-    #    decision = "<font color='red'>**LOAN REJECTED**</font>"
+    if prediction <= 0.49 :
+        decision = "<font color='green'>**LOAN GRANTED**</font>" 
+    else:
+       decision = "<font color='red'>**LOAN REJECTED**</font>"
 
-    #st.write("**Decision** *(with threshold xx%)* **: **", decision, unsafe_allow_html=True)
+    st.write("**Decision** *(with threshold xx%)* **: **", decision, unsafe_allow_html=True)
 
     st.markdown("<u>Customer Data :</u>", unsafe_allow_html=True)
     st.write(identite_client(data, chk_id))
@@ -243,13 +243,13 @@ def main() :
         knn = load_knn(sample)
         st.markdown("<u>List of the 10 files closest to this Customer :</u>", unsafe_allow_html=True)
         st.dataframe(load_kmeans(sample, chk_id, knn))
-        st.markdown("<i>Target 1 = Customer with default</i>", unsafe_allow_html=True)
+        st.markdown("<i>Target 1 = Customer with default payment</i>", unsafe_allow_html=True)
     else:
         st.markdown("<i>…</i>", unsafe_allow_html=True)
         
         
     st.markdown('***')
-    st.markdown("Thanks for going through this Web App")
+    st.markdown("Thank You")
 
 
 if __name__ == '__main__':
