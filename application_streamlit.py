@@ -23,7 +23,7 @@ def main() :
     @st.cache
     def load_data():
         z = ZipFile("data/data_original.zip")
-        data = pd.read_csv(z.open('data_originale.csv'), index_col='SK_ID_CURR', encoding ='utf-8')
+        data = pd.read_csv(z.open('data_original.csv'), index_col='SK_ID_CURR', encoding ='utf-8')
 
         z = ZipFile("data/X_sample.zip")
         sample = pd.read_csv(z.open('X_sample.csv'), index_col='SK_ID_CURR', encoding ='utf-8')
