@@ -158,7 +158,7 @@ def main() :
 
 
     #Customer information display : Customer Gender, Age, Family status, Children, …
-    st.header("**customer facing display :**")
+    st.header("**Customer facing display :**")
 
     if st.checkbox("Viewing Customer Information ?"):
 
@@ -171,7 +171,7 @@ def main() :
         #Age distribution plot
         data_age = load_age_population(data)
         fig, ax = plt.subplots(figsize=(10, 5))
-        sns.histplot(data_age, edgecolor = 'k', color="goldenrod", bins=20)
+        sns.histplot(data_age, edgecolor = 'k', color="lightcoral", bins=20)
         ax.axvline(int(infos_client["DAYS_BIRTH"].values / 365), color="green", linestyle='--')
         ax.set(title='Customer age', xlabel='Age(Year)', ylabel='')
         st.pyplot(fig)
@@ -186,7 +186,7 @@ def main() :
         #Income distribution plot
         data_income = load_income_population(data)
         fig, ax = plt.subplots(figsize=(10, 5))
-        sns.histplot(data_income["AMT_INCOME_TOTAL"], edgecolor = 'k', color="goldenrod", bins=10)
+        sns.histplot(data_income["AMT_INCOME_TOTAL"], edgecolor = 'k', color="lightcoral", bins=10)
         ax.axvline(int(infos_client["AMT_INCOME_TOTAL"].values[0]), color="green", linestyle='--')
         ax.set(title='Customer income', xlabel='Income (USD)', ylabel='')
         st.pyplot(fig)
