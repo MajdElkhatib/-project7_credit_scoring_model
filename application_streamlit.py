@@ -207,7 +207,7 @@ def main() :
     else:
        decision = "<font color='red'>**LOAN REJECTED**</font>"
 
-    st.write("**Decision** *(with threshold xx%)* **: **", decision, unsafe_allow_html=True)
+    st.write("**Decision** ** **: **", decision, unsafe_allow_html=True)
 
     st.markdown("<u>Customer Data :</u>", unsafe_allow_html=True)
     st.write(identite_client(data, chk_id))
