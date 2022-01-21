@@ -116,7 +116,7 @@ def main() :
     <div style="background-color: red; padding:10px; border-radius:10px">
     <h1 style="color: white; text-align:center">Dashboard Scoring Credit</h1>
     </div>
-    <p style="font-size: 20px; font-weight: bold; text-align:center">Credit decision support…</p>
+    <p style="font-size: 20px; font-weight: bold; text-align:center">Evaluation of a decision support system for credit</p>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
 
@@ -154,18 +154,18 @@ def main() :
     # HOME PAGE - MAIN CONTENT
     #######################################
     #Display Customer ID from Sidebar
-    st.write("Customer ID selection :", chk_id)
+    st.write("Customer ID selected :", chk_id)
 
 
     #Customer information display : Customer Gender, Age, Family status, Children, …
-    st.header("**Customer information display**")
+    st.header("**customer facing display :**")
 
-    if st.checkbox("Show customer information ?"):
+    if st.checkbox("Viewing Customer Information ?"):
 
         infos_client = identite_client(data, chk_id)
         st.write("**Gender : **", infos_client["CODE_GENDER"].values[0])
         st.write("**Age : **{:.0f} ans".format(int(infos_client["DAYS_BIRTH"]/365)))
-        st.write("**Family status : **", infos_client["NAME_FAMILY_STATUS"].values[0])
+        st.write("**Family and marital status : **", infos_client["NAME_FAMILY_STATUS"].values[0])
         st.write("**Number of children : **{:.0f}".format(infos_client["CNT_CHILDREN"].values[0]))
 
         #Age distribution plot
@@ -191,26 +191,7 @@ def main() :
         ax.set(title='Customer income', xlabel='Income (USD)', ylabel='')
         st.pyplot(fig)
         
-        #Relationship Age / Income Total interactive plot 
-        data_sk = data.reset_index(drop=False)
-        data_sk.DAYS_BIRTH = (data_sk['DAYS_BIRTH']/365).round(1)
-        fig, ax = plt.subplots(figsize=(10, 10))
-        fig = px.scatter(data_sk, x='DAYS_BIRTH', y="AMT_INCOME_TOTAL", 
-                         size="AMT_INCOME_TOTAL", color='CODE_GENDER',
-                         hover_data=['NAME_FAMILY_STATUS', 'CNT_CHILDREN', 'NAME_CONTRACT_TYPE', 'SK_ID_CURR'])
-
-        fig.update_layout({'plot_bgcolor':'#f0f0f0'}, 
-                          title={'text':"Relationship Age / Income Total", 'x':0.5, 'xanchor': 'center'}, 
-                          title_font=dict(size=20, family='Verdana'), legend=dict(y=1.1, orientation='h'))
-
-
-        fig.update_traces(marker=dict(line=dict(width=0.5, color='#3a352a')), selector=dict(mode='markers'))
-        fig.update_xaxes(showline=True, linewidth=2, linecolor='#f0f0f0', gridcolor='#cbcbcb',
-                         title="Age", title_font=dict(size=18, family='Verdana'))
-        fig.update_yaxes(showline=True, linewidth=2, linecolor='#f0f0f0', gridcolor='#cbcbcb',
-                         title="Income Total", title_font=dict(size=18, family='Verdana'))
-
-        st.plotly_chart(fig)
+        
     
     else:
         st.markdown("<i>…</i>", unsafe_allow_html=True)
