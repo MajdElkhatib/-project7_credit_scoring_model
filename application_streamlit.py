@@ -113,7 +113,7 @@ def main() :
 
     #Title display
     html_temp = """
-    <div style="background-color: tomato; padding:10px; border-radius:10px">
+    <div style="background-color: red; padding:10px; border-radius:10px">
     <h1 style="color: white; text-align:center">Dashboard Scoring Credit</h1>
     </div>
     <p style="font-size: 20px; font-weight: bold; text-align:center">Credit decision support…</p>
