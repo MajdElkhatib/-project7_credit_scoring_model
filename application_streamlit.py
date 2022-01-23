@@ -124,7 +124,7 @@ def main() :
     st.sidebar.header("**General Info**")
 
     #Loading selectbox
-    chk_id = st.sidebar.selectbox("Client ID", id_client)
+    chk_id = st.sidebar.selectbox("Customers can be filtered by their ID", id_client)
 
     #Loading general info
     nb_credits, rev_moy, credits_moy, targets = load_infos_gen(data)
@@ -132,7 +132,7 @@ def main() :
 
     ### Display of information in the sidebar ###
     #Number of loans in the sample
-    st.sidebar.markdown("<u>Number of loans in the sample :</u>", unsafe_allow_html=True)
+    st.sidebar.markdown("<u>Number of loans in the database:</u>", unsafe_allow_html=True)
     st.sidebar.text(nb_credits)
 
     #Average income
@@ -160,7 +160,7 @@ def main() :
     #Customer information display : Customer Gender, Age, Family status, Children, …
     st.header("**Customer facing display :**")
 
-    if st.checkbox("Viewing Customer Information ?"):
+    if st.checkbox("Click on the checkbox to view more Customer Information"):
 
         infos_client = identite_client(data, chk_id)
         st.write("**Gender : **", infos_client["CODE_GENDER"].values[0])
@@ -172,7 +172,7 @@ def main() :
         data_age = load_age_population(data)
         fig, ax = plt.subplots(figsize=(10, 5))
         sns.histplot(data_age, edgecolor = 'k', color="lightcoral", bins=20)
-        ax.axvline(int(infos_client["DAYS_BIRTH"].values / 365), color="green", linestyle='--')
+        ax.axvline(int(infos_client["DAYS_BIRTH"].values / (-365)), color="green", linestyle='--')
         ax.set(title='Customer age', xlabel='Age(Year)', ylabel='')
         st.pyplot(fig)
     
