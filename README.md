@@ -42,6 +42,7 @@ Installation de Heroku Command Line Interface (CLI) [Heroku CLI](https://devcent
 [How to Deploy Data Science Web App to Heroku | Streamlit](https://www.youtube.com/watch?v=zK4Ch6e1zq8)  
 [Streamlit cheat sheet](https://share.streamlit.io/daniellewisdl/streamlit-cheat-sheet/app.py)  
 [Gérez du code avec Git et GitHub](https://openclassrooms.com/fr/courses/7162856-gerez-du-code-avec-git-et-github)  
+[Le kernel LightGBM with Simple Features](https://www.kaggle.com/jsaguiar/lightgbm-with-simple-features)
 
 
 
