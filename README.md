@@ -14,11 +14,11 @@ Pour plus de simplicité, vous pouvez les télécharger à [cette adresse](https
 # Livrables 
 Le dashboard interactif répondant aux spécifications ci-dessus et l’API de prédiction du score.  
 Le dépôt contient :  
- Le code de la modélisation (du prétraitement à la prédiction)  
- Le code générant le dashboard  
- Le code permettant de déployer le modèle sous forme d'API  
- Une note méthodologique décrivant :  
- La méthodologie d'entraînement du modèle.  
- La fonction coût métier, l'algorithme d'optimisation et la métrique d'évaluation  
- L’interprétabilité globale et locale du modèle    
- Un support de présentation détaillant le travail réalisé.
+  -Le code de la modélisation (du prétraitement à la prédiction).   
+  -Le code générant le dashboard.  
+  -Le code permettant de déployer le modèle sous forme d'API.  
+  -Une note méthodologique décrivant :  
+  -La méthodologie d'entraînement du modèle.  
+  -La fonction coût métier, l'algorithme d'optimisation et la métrique d'évaluation.  
+  -L’interprétabilité globale et locale du modèle.  
+  -Un support de présentation détaillant le travail réalisé.
