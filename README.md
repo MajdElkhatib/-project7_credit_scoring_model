@@ -28,6 +28,23 @@ Le dépôt contient :
 * Déployer un modèle via une API dans le Web
 * Utiliser un logiciel de version de code pour assurer l’intégration du modèle
 * Rédiger une note méthodologique afin de communiquer sa démarche de modélisation
-* Réaliser un dashboard pour présenter son travail de modélisation
-  
+* Réaliser un dashboard pour présenter son travail de modélisation  
+
+# Heroku Git  
+Installation de Heroku Command Line Interface (CLI) [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) 
+
+# Mise à jour des modifications  
+    $ git add .  
+    $ git commit -am "make it better"  
+    $ git push heroku master  
+
+# Références :  
+[How to Deploy Data Science Web App to Heroku | Streamlit](https://www.youtube.com/watch?v=zK4Ch6e1zq8)  
+[Streamlit cheat sheet](https://share.streamlit.io/daniellewisdl/streamlit-cheat-sheet/app.py)  
+[Gérez du code avec Git et GitHub](https://openclassrooms.com/fr/courses/7162856-gerez-du-code-avec-git-et-github)  
+
+
+
+    
+
   
