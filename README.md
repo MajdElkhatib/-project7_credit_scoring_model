@@ -10,5 +10,15 @@ L'application contient les fonctionnalités suivantes :
 # Les données :  
 Voici [les données](https://www.kaggle.com/c/home-credit-default-risk/data) dont vous aurez besoin pour réaliser le dashboard.  
 Pour plus de simplicité, vous pouvez les télécharger à [cette adresse](https://s3-eu-west-1.amazonaws.com/static.oc-static.com/prod/courses/files/Parcours_data_scientist/Projet+-+Impl%C3%A9menter+un+mod%C3%A8le+de+scoring/Projet+Mise+en+prod+-+home-credit-default-risk.zip).
- 
- 
+
+# Livrables 
+Le dashboard interactif répondant aux spécifications ci-dessus et l’API de prédiction du score.  
+Le dépôt contient :  
+ Le code de la modélisation (du prétraitement à la prédiction)  
+ Le code générant le dashboard  
+ Le code permettant de déployer le modèle sous forme d'API  
+ Une note méthodologique décrivant :  
+ La méthodologie d'entraînement du modèle.  
+ La fonction coût métier, l'algorithme d'optimisation et la métrique d'évaluation  
+ L’interprétabilité globale et locale du modèle    
+ Un support de présentation détaillant le travail réalisé.
