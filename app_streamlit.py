@@ -33,9 +33,15 @@ def main() :
 
     def load_model():
         '''loading the trained model'''
-        pickle_in = open('model/LGBMClassifier.pkl', 'rb') 
+        pickle_in = open('model/LGBMClassifier_optimal_final.pkl', 'rb') 
         clf = pickle.load(pickle_in)
         return clf
+    
+    def load_opt_threshold():
+        '''loading the optimal threshold'''
+        pickle_in_threshold = open('model/opt_threshold.pkl', 'rb') 
+        opt_threshold = pickle.load(pickle_in_threshold)
+        return opt_threshold
 
 
     @st.cache(allow_output_mutation=True)
@@ -197,7 +203,7 @@ def main() :
     st.write("**Default probability : **{:.0f} %".format(round(float(prediction)*100, 2)))
 
     #Compute decision according to the best threshold
-    if prediction <= 0.49 :
+    if prediction <= opt_threshold :
         decision = "<font color='green'>**LOAN GRANTED**</font>" 
     else:
        decision = "<font color='red'>**LOAN REJECTED**</font>"
