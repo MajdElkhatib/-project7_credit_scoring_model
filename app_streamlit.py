@@ -37,13 +37,11 @@ def main() :
         clf = pickle.load(pickle_in)
         return clf
     
-    def load_opt_threshold():
-        '''loading the optimal threshold'''
-        pickle_in_threshold = open('model/opt_threshold.pkl', 'rb') 
-        opt_threshold = pickle.load(pickle_in_threshold)
-        return opt_threshold
+    path = os.path.join('model', 'opt_threshold.pkl')
+    with open(path, 'rb') as file:
+        opt_threshold = joblib.load(file)
 
-
+    
     @st.cache(allow_output_mutation=True)
     def load_knn(sample):
         knn = knn_training(sample)
