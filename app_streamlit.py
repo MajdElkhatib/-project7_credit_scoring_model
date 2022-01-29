@@ -107,6 +107,7 @@ def main() :
     data, sample, target, description = load_data()
     id_client = sample.index.values
     clf = load_model()
+    threshold = load_threshold()
 
 
     #######################################
