@@ -37,9 +37,12 @@ def main() :
         clf = pickle.load(pickle_in)
         return clf
     
-    path = os.path.join('model', 'opt_threshold.pkl')
-    with open(path, 'rb') as file:
-         threshold = joblib.load(file)
+    
+    def load_threshold():
+        '''loading the threshold'''
+        pickle_threshold_in = open('model/opt_threshold.pkl', 'rb') 
+        threshold = pickle.load(pickle_threshold_in)
+        return threshold
 
     
     @st.cache(allow_output_mutation=True)
