@@ -39,7 +39,7 @@ def main() :
     
     path = os.path.join('model', 'opt_threshold.pkl')
     with open(path, 'rb') as file:
-        opt_threshold = joblib.load(file)
+         opt_threshold = joblib.load(file)
 
     
     @st.cache(allow_output_mutation=True)
