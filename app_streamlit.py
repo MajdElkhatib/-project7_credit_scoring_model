@@ -39,7 +39,7 @@ def main() :
     
     path = os.path.join('model', 'opt_threshold.pkl')
     with open(path, 'rb') as file:
-         opt_threshold = joblib.load(file)
+         threshold = joblib.load(file)
 
     
     @st.cache(allow_output_mutation=True)
@@ -201,7 +201,7 @@ def main() :
     st.write("**Default probability : **{:.0f} %".format(round(float(prediction)*100, 2)))
 
     #Compute decision according to the best threshold
-    if prediction <= opt_threshold :
+    if prediction <= threshold :
         decision = "<font color='green'>**LOAN GRANTED**</font>" 
     else:
        decision = "<font color='red'>**LOAN REJECTED**</font>"
